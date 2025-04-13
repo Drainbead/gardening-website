@@ -1,87 +1,122 @@
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #d9f2d9;
-    font-family: sans-serif;
-    color: #2f4f2f;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BCA Gardening Service | Peterborough</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f9f4;
+      color: #333;
+    }
 
-  .wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 60px 20px;
-  }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
 
-  h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #255e25;
-  }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-  .intro {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-  }
+    header p {
+      font-size: 1.2rem;
+    }
 
-  h2 {
-    font-size: 1.5rem;
-    color: #1f401f;
-    margin-top: 40px;
-  }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
 
-  ul {
-    font-size: 1.1rem;
-    padding-left: 20px;
-    margin-top: 10px;
-  }
+    .services, .contact {
+      background-color: #e8f5e9;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
 
-  li {
-    margin-bottom: 10px;
-  }
+    .services h2, .contact h2 {
+      margin-top: 0;
+      color: #2e7d32;
+    }
 
-  .contact {
-    background-color: #c1e1c1;
-    padding: 20px;
-    margin-top: 50px;
-    border-radius: 8px;
-    text-align: center;
-  }
+    ul {
+      padding-left: 1.5rem;
+    }
 
-  .contact p {
-    margin: 8px 0;
-    font-size: 1.1rem;
-  }
-</style>
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-<div class="wrapper">
-  <h1>BCA Gardening Service</h1>
-  <p class="intro">
-    Professional, reliable garden care in Peterborough. Simple pricing, honest service.
-  </p>
+    .gallery img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-  <h2>Services</h2>
-  <ul>
-    <li>Lawn mowing & edging</li>
-    <li>Hedge trimming & reductions</li>
-    <li>Overgrown bed clearance</li>
-    <li>Weeding & general maintenance</li>
-    <li>One-off or regular visits</li>
-  </ul>
+    .contact a {
+      color: #2e7d32;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-  <h2>Pricing</h2>
-  <ul>
-    <li>£30 per hour</li>
-    <li>£60 for a 2-hour fixed-rate visit</li>
-    <li>Quotes available for larger jobs</li>
-  </ul>
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
 
-  <div class="contact">
+  <header>
+    <h1>BCA Gardening Service</h1>
+    <p>Professional Garden Care in Peterborough</p>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>Hi, I'm a local gardener offering professional services in and around Peterborough. Whether it's lawn care, hedge trimming, or a complete garden refresh — I take pride in quality work and great results.</p>
+  </section>
+
+  <section class="services">
+    <h2>Services & Pricing</h2>
+    <ul>
+      <li>Lawn mowing & edging</li>
+      <li>Hedge cutting & shaping</li>
+      <li>General maintenance & tidy ups</li>
+      <li>Custom garden makeovers</li>
+    </ul>
+    <p><strong>Pricing:</strong> £30/hour or £60 per 2-hour visit</p>
+  </section>
+
+  <section class="gallery">
+    <h2>Gallery (Before & After)</h2>
+    <!-- Replace these with real photos -->
+    <img src="https://via.placeholder.com/280x180?text=Before" alt="Before garden">
+    <img src="https://via.placeholder.com/280x180?text=After" alt="After garden">
+  </section>
+
+  <section class="contact">
     <h2>Contact</h2>
-    <p>Email: hello@bcagardeningservice.co.uk</p>
-    <p>Phone: 07xxx xxxxxx</p>
-    <p>Based in Peterborough</p>
-  </div>
-</div>
+    <p>Email: <a href="mailto:bcagardeningservice@gmail.com">bcagardeningservice@gmail.com</a></p>
+    <p>Phone: <a href="tel:+447000000000">07000 000000</a></p>
+  </section>
+
+  <footer>
+    © 2025 BCA Gardening Service | Designed by BCA
+  </footer>
+
+</body>
+</html>
