@@ -227,24 +227,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-		<script>
-  // Check if the user came from another site or direct entry
-  const isExternalVisit = document.referrer === "" || !document.referrer.includes(location.hostname);
-
-  if (isExternalVisit) {
-    // Add a class to trigger animation
-    document.body.classList.add("play-entry-animation");
-  }
-</script>
-		<script>
-  const hasAnimated = sessionStorage.getItem("animatedOnce");
-  const isExternalVisit = document.referrer === "" || !document.referrer.includes(location.hostname);
-
-  if (isExternalVisit && !hasAnimated) {
-    document.body.classList.add("play-entry-animation");
-    sessionStorage.setItem("animatedOnce", "true");
-  }
-</script>
+		
 
 	</body>
 </html>
