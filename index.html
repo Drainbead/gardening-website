@@ -236,6 +236,15 @@
     document.body.classList.add("play-entry-animation");
   }
 </script>
+		<script>
+  const hasAnimated = sessionStorage.getItem("animatedOnce");
+  const isExternalVisit = document.referrer === "" || !document.referrer.includes(location.hostname);
+
+  if (isExternalVisit && !hasAnimated) {
+    document.body.classList.add("play-entry-animation");
+    sessionStorage.setItem("animatedOnce", "true");
+  }
+</script>
 
 	</body>
 </html>
