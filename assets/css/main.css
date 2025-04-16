@@ -4689,14 +4689,13 @@ input, select, textarea {
 
 
 	}
-ul {
+ul.services-list {
   list-style-position: outside;
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  margin: 1rem 0;
 }
 
-ul li {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
+ul.services-list li {
+  margin: 0.3rem 0;
+  line-height: 1.4;
 }
