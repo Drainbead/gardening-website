@@ -4687,8 +4687,6 @@ input, select, textarea {
 		}
 
 
-
-	}
 ul.services-list {
   list-style-position: outside;
   padding-left: 1.2rem;
@@ -4699,3 +4697,5 @@ ul.services-list li {
   margin: 0.3rem 0;
   line-height: 1.4;
 }
+	}
+
