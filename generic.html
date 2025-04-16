@@ -63,39 +63,47 @@ Whether you're after regular maintenance, a one-off tidy, or just want your spac
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
+			<form name="contact" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact" />
+  
+  <div class="fields">
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required />
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="3" required></textarea>
+    </div>
+  </div>
+
+  <ul class="actions">
+    <li><input type="submit" value="Send Message" /></li>
+  </ul>
+</form>
 						</section>
 						<section class="split contact">
 							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
+								<h3>Locations Served</h3>
+								<p>Peterborough <br />
+								and Surrounding Area</p>
 							</section>
 							<section>
 								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
+								<p>
+  Call me on: <br><strong>07525566934</strong><br><br>
+  <a href="tel:07525566934" class="button">Call me</a>
+</p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
+								<p><a href="mailto:bcagardeningservice@gmail.com">bcagardeningservice@gmail.com</a></p>
 							</section>
 							<section>
 								<h3>Social</h3>
@@ -107,6 +115,7 @@ Whether you're after regular maintenance, a one-off tidy, or just want your spac
 								</ul>
 							</section>
 						</section>
+						
 					</footer>
 
 				<!-- Copyright -->
