@@ -4685,6 +4685,10 @@ input, select, textarea {
 			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
 			visibility: visible;
 		}
+
+
+
+	}
 		ul {
   list-style-position: inside;
   padding-left: 1rem;
@@ -4694,6 +4698,3 @@ ul li {
   margin-bottom: 0.3rem;
   line-height: 1.4;
 }
-
-
-	}
