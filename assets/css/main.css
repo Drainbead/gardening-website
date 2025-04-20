@@ -3239,18 +3239,18 @@ input, select, textarea {
   linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
   url("../../images/lawn26.png");
 
-background-size: 
-  cover,        /* makes overlay cover entire area */
-  cover,        /* makes gradient cover entire area */
-  cover;        /* makes lawn26.png scale properly */
+  background-size: 
+  auto, 
+  100% 100%, 
+  contain;
 
 background-position: 
   center, 
   center, 
-  center;
+  top center;
 
 background-repeat: 
-  no-repeat, 
+  repeat, 
   no-repeat, 
   no-repeat;
 
