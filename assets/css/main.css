@@ -3774,7 +3774,7 @@ z-index: -1;
 /* Main */
 
 	#main {
-		background-color: rgba(255, 255, 255, 0.5); /* Green background with 30% opacity */  /* change backround colour of box ben */
+		background-color: rgba(255, 255, 255, 0.7); /* Green background with 30% opacity */  /* change backround colour of box ben */
 		position: relative;
 		margin: 0 auto;
 		width: calc(100% - 4rem);
@@ -3812,7 +3812,7 @@ z-index: -1;
 			}
 
 			#main > .post.featured {
-				background-color: rgba(0, 128, 0, 0.3); /* Green background with 30% opacity ben*/
+				/*background-color: rgba(0, 128, 0, 0.3); */ /* Green background with 30% opacity ben*/
 				
 				text-align: center;
   				
