@@ -3242,12 +3242,12 @@ input, select, textarea {
   background-size: 
   auto,
   100% 100%,
-  100% auto;
+  contain;
 
 background-position: 
   center, 
   center, 
-  top center;
+  center;
 
 background-repeat: 
   repeat, 
