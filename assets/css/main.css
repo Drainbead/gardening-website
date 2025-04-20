@@ -72,6 +72,35 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* lawn pic in box ben */
+.lawn-box {
+	position: relative;
+	background-image: url('https://bcagardeningservice.co.uk/images/lawn26.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	/* color: white;  optional: make text visible over image */
+	padding: 2rem;
+	border-radius: 10px;
+	overflow: hidden;
+  }
+  
+  .lawn-box p,
+  .lawn-box h2 {
+	position: relative;
+	z-index: 2;
+  }
+  
+  .lawn-box::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 253, 253, 0.4); /* dark overlay for contrast */
+	z-index: 1;
+  }
 /* Basic */
 
 	@-ms-viewport {
