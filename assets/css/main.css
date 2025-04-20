@@ -3294,12 +3294,10 @@ z-index: -1;
 		}
 
 		@media screen and (orientation: portrait) {
-
 			#wrapper > .bg {
-				background-size: auto,								auto,														auto 175%;
+			  background-size: auto, auto, contain;
 			}
-
-		}
+		  }
 
 /* Intro */
 
