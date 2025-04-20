@@ -3295,7 +3295,7 @@ z-index: -1;
 
 		@media screen and (orientation: portrait) {
 			#wrapper > .bg {
-			  background-size: auto, auto, contain;
+			  background-size: auto, auto, cover;
 			}
 		  }
 
