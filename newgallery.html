@@ -184,32 +184,55 @@
 				  const img = wrapper.querySelector('img');
 				  let showingBefore = true;
 			  
-				  // STEP 1: Click on image when NOT fullscreen => enter fullscreen
+				  // Open fullscreen
 				  img.addEventListener('click', (e) => {
 					const isFullscreen = wrapper.classList.contains('fullscreen');
 			  
 					if (!isFullscreen) {
-					  e.stopPropagation(); // Prevent bubbling up
+					  e.stopPropagation();
 					  wrapper.classList.add('fullscreen');
 					  document.body.style.overflow = 'hidden';
 					  img.src = img.dataset.before;
 					  showingBefore = true;
+			  
+					  // Push a fake history state to catch back button
+					  history.pushState({ fullscreen: true }, '', '');
 					} else {
-					  // Already fullscreen -> perform swipe effect (before/after)
+					  // Toggle swipe effect
 					  showingBefore = !showingBefore;
 					  img.src = showingBefore ? img.dataset.before : img.dataset.after;
 					}
 				  });
 			  
-				  // STEP 2: Click outside the image (black area) => exit fullscreen
+				  // Exit fullscreen when clicking the background
 				  wrapper.addEventListener('click', (e) => {
 					if (e.target === wrapper) {
-					  wrapper.classList.remove('fullscreen');
-					  document.body.style.overflow = '';
+					  exitFullscreen(wrapper);
 					}
 				  });
+			  
+				  // Back button handler
+				  window.addEventListener('popstate', (e) => {
+					// If fullscreen, close it
+					const openWrapper = document.querySelector('.image-wrapper.fullscreen');
+					if (openWrapper) {
+					  exitFullscreen(openWrapper);
+					}
+				  });
+			  
+				  // Exit fullscreen helper
+				  function exitFullscreen(wrapper) {
+					wrapper.classList.remove('fullscreen');
+					document.body.style.overflow = '';
+			  
+					// Remove fake history state so pressing back again goes to previous page
+					if (history.state && history.state.fullscreen) {
+					  history.back();
+					}
+				  }
 				});
 			  </script>
+			  
 
 								<!-- fullscreen ben below-->
 								
