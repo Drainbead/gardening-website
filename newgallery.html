@@ -80,7 +80,19 @@
 												</div>
 											  </div>
 											<!-- Break -->
-											<div class="col-4"><span class="image fit"><img src="images/lawn25.jpg" alt="" /></span></div>
+
+											<div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/Sylvias tree before.jpg" 
+													data-before="images/Sylvias tree before.jpg"
+													data-after="images/Sylvias tree after.jpg"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+
 											<div class="col-4"><span class="image fit"><img src="images/lawn25.jpg" alt="" /></span></div>
 											<div class="col-4"><span class="image fit"><img src="images/lawn25.jpg" alt="" /></span></div>
 											<!-- Break -->
@@ -167,6 +179,37 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				document.querySelectorAll('.image-wrapper').forEach(wrapper => {
+				  const img = wrapper.querySelector('img');
+				  let showingBefore = true;
+			  
+				  // STEP 1: Click on image when NOT fullscreen => enter fullscreen
+				  img.addEventListener('click', (e) => {
+					const isFullscreen = wrapper.classList.contains('fullscreen');
+			  
+					if (!isFullscreen) {
+					  e.stopPropagation(); // Prevent bubbling up
+					  wrapper.classList.add('fullscreen');
+					  document.body.style.overflow = 'hidden';
+					  img.src = img.dataset.before;
+					  showingBefore = true;
+					} else {
+					  // Already fullscreen -> perform swipe effect (before/after)
+					  showingBefore = !showingBefore;
+					  img.src = showingBefore ? img.dataset.before : img.dataset.after;
+					}
+				  });
+			  
+				  // STEP 2: Click outside the image (black area) => exit fullscreen
+				  wrapper.addEventListener('click', (e) => {
+					if (e.target === wrapper) {
+					  wrapper.classList.remove('fullscreen');
+					  document.body.style.overflow = '';
+					}
+				  });
+				});
+			  </script>
 
 								<!-- fullscreen ben below-->
 								
