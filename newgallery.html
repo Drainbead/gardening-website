@@ -272,7 +272,34 @@
 				  };
 				});
 			  </script>
-			  
+			  <!-- Other scripts -->
+<script>
+	function preloadImages(imageArray) {
+	  imageArray.forEach(src => {
+		const img = new Image();
+		img.src = src;
+	  });
+	}
+  
+	// Call the function with your image paths
+	preloadImages([
+	  'images/dale james palm conifer after.jpg',
+	  'images/dale james palm conifer before.jpg',
+	  'images/edgeafter.jpg',
+	  'images/edgebefore.jpg',
+	  'images/pathafter.jpg',
+	  'images/pathbefore.jpg',
+	  'images/rsleftafter.jpg',
+	  'images/rsleftbefore.jpg',
+	  'images/rsrightafter.jpg',
+	  'images/rsrightbefore.jpg',
+	  'images/Sylvias tree after.jpg',
+	  'images/Sylvias tree before.jpg'
+	]);
+  </script>
+  </body>
+  </html>
+  
 			  
 			  
 				
