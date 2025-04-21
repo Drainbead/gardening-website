@@ -142,6 +142,7 @@
 					}
 				});
 
+				
 		// Panel.
 			$navPanel = $(
 				'<div id="navPanel">' +
@@ -195,6 +196,19 @@
 				&&	browser.osVersion < 10)
 					$navPanel
 						.css('transition', 'none');
+
+						document.addEventListener("DOMContentLoaded", function () {
+							document.querySelectorAll(".fullscreen-btn").forEach(button => {
+							  button.addEventListener("click", function (e) {
+								const wrapper = e.target.closest(".image-wrapper");
+								const isFullscreen = wrapper.classList.toggle("fullscreen");
+						  
+								document.body.style.overflow = isFullscreen ? "hidden" : "";
+							  });
+							});
+						  });
+						  
+						  
 
 	// Intro.
 		var $intro = $('#intro');
