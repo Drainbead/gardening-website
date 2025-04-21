@@ -4835,7 +4835,78 @@ z-index: -1;
 	max-height: 90%;
 	object-fit: contain;
 	transition: opacity 0.5s ease;
+	opacity: 1;
   }
+  .image-wrapper.fullscreen img.fade-out {
+	opacity: 0;
+  }
+  .fade-out {
+	opacity: 0;
+	transition: opacity 0.4s ease;
+  }
+  .image-wrapper img {
+	opacity: 1;
+	transition: opacity 0.4s ease;
+	
+  }
+  .image-wrapper.fullscreen .comparison-click {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 100%;
+	z-index: 10001;
+  }
+  
+  .comparison-click {
+	position: relative;
+	width: 100%;
+	height: auto;
+  }
+  
+  .comparison-click img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: opacity 0.4s ease;
+  }
+  
+  .comparison-click img.after {
+	opacity: 0;
+	z-index: 2;
+  }
+  
+  .comparison-click.active img.after {
+	opacity: 1;
+  }
+  .image-wrapper.multi-step {
+	position: relative;
+	cursor: pointer;
+  }
+  
+  .image-wrapper.multi-step img {
+	width: 100%;
+	height: auto;
+	transition: opacity 0.4s ease;
+	z-index: 1;
+  }
+  
+  .nav-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0,0,0,0.6);
+	color: white;
+	border: none;
+	font-size: 2rem;
+	padding: 10px 15px;
+	cursor: pointer;
+	z-index: 10;
+  }
+  
+  
+  
   
 	#navPanel {
 		-moz-transform: translateX(20rem);

@@ -55,8 +55,13 @@
 
 											<div class="col-4">
 												<div class="image-wrapper">
-												  <img src="images/lawn25.jpg" alt="Lawn" />
-												  <button class="fullscreen-btn">⤢</button>
+												  <img 
+													src="images/dale james palm conifer before.jpg" 
+													data-before="images/dale james palm conifer before.jpg"
+													data-after="images/dale james palm conifer after.jpg"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
 												</div>
 											  </div>
 											  
@@ -67,20 +72,31 @@
 
 											  <div class="col-4">
 												<div class="image-wrapper">
-												  <img src="images/lawn25.jpg" alt="Lawn" />
-												  <button class="fullscreen-btn">⤢</button>
+												  <img 
+													src="images/rsleftbefore.jpg" 
+													data-before="images/rsleftbefore.jpg"
+													data-after="images/rsleftafter.jpg"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
 												</div>
 											  </div>
 
 
 											  <div class="col-4">
 												<div class="image-wrapper">
-												  <img src="images/lawn25.jpg" alt="Lawn" />
-												  <button class="fullscreen-btn">⤢</button>
+												  <img 
+													src="images/rsrightbefore.jpg" 
+													data-before="images/rsrightbefore.jpg"
+													data-after="images/rsrightafter.jpg"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
 												</div>
 											  </div>
 											<!-- Break -->
 
+											
 											<div class="col-4">
 												<div class="image-wrapper">
 												  <img 
@@ -202,6 +218,7 @@
 					  showingBefore = !showingBefore;
 					  img.src = showingBefore ? img.dataset.before : img.dataset.after;
 					}
+					
 				  });
 			  
 				  // Exit fullscreen when clicking the background
@@ -233,7 +250,68 @@
 				});
 			  </script>
 			  
-
+			  <script>
+				document.querySelectorAll('.image-wrapper.multi-step').forEach(wrapper => {
+				  const img = wrapper.querySelector('img');
+				  const images = JSON.parse(wrapper.dataset.images);
+				  let index = 0;
+				  let isFullscreen = false;
+				  let justEnteredFullscreen = false;
+			  
+				  const showImage = (i) => {
+					img.classList.add('fade-out');
+					requestAnimationFrame(() => {
+					  img.src = images[i];
+					  img.onload = () => {
+						img.classList.remove('fade-out');
+					  };
+					});
+				  };
+			  
+				  img.addEventListener('click', (e) => {
+					if (!isFullscreen) {
+					  e.stopPropagation();
+					  isFullscreen = true;
+					  justEnteredFullscreen = true;
+			  
+					  wrapper.classList.add('fullscreen');
+					  document.body.style.overflow = 'hidden';
+					  index = 0;
+					  showImage(index);
+			  
+					  history.pushState({ fullscreen: true }, '', '');
+			  
+					  // Wait a short moment so the first click doesn’t trigger image swap
+					  setTimeout(() => justEnteredFullscreen = false, 300);
+					} else if (!justEnteredFullscreen) {
+					  index = (index + 1) % images.length;
+					  showImage(index);
+					}
+				  });
+			  
+				  wrapper.addEventListener('click', (e) => {
+					if (e.target === wrapper) {
+					  exitFullscreen(wrapper);
+					}
+				  });
+			  
+				  window.addEventListener('popstate', () => {
+					const open = document.querySelector('.image-wrapper.fullscreen');
+					if (open) exitFullscreen(open);
+				  });
+			  
+				  const exitFullscreen = (wrapper) => {
+					wrapper.classList.remove('fullscreen');
+					document.body.style.overflow = '';
+					isFullscreen = false;
+					if (history.state?.fullscreen) history.back();
+				  };
+				});
+			  </script>
+			  
+			  
+			  
+				
 								<!-- fullscreen ben below-->
 								
 								  
