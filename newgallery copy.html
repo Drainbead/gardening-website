@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Gallery</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">BCA</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">My Services</a></li>
+							<li><a href="aboutme.html">About Me</a></li>
+							<li><a href="newgallery.html">Gallery</a></li>
+							
+						</ul>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>
+									Gallery</h1>
+								</header>
+
+								
+								
+									
+								
+								
+								<!-- Image -->
+									
+								
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+
+											<div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/dale james palm conifer after.webp" 
+													data-before="images/dale james palm conifer after.webp"
+													data-after="images/dale james palm conifer before.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+											  
+											  
+											  
+											  
+
+
+											  <div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/rsleftafter.webp" 
+													data-before="images/rsleftafter.webp"
+													data-after="images/rsleftbefore.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+
+
+											  <div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/BClawnafter.webp" 
+													data-before="images/BClawnafter.webp"
+													data-after="images/BClawnbefore.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+											<!-- Break -->
+
+											
+											<div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/Sylvias tree after.webp" 
+													data-before="images/Sylvias tree after.webp"
+													data-after="images/Sylvias tree before.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+
+											  <div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/edgeafter.webp" 
+													data-before="images/edgeafter.webp"
+													data-after="images/edgebefore.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+
+											<div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/pathafter.webp" 
+													data-before="images/pathafter.webp"
+													data-after="images/pathbefore.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+											<!-- Break -->
+											<div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/lawn25webp.webp" 
+													data-before="images/lawn25webp.webp"
+													data-after="images/lawn25before.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+											
+											  <div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/Sedgeafter.webp" 
+													data-before="images/Sedgeafter.webp"
+													data-after="images/Sedgebefore.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+
+											  <div class="col-4">
+												<div class="image-wrapper">
+												  <img 
+													src="images/Sgutterafter.webp" 
+													data-before="images/Sgutterafter.webp"
+													data-after="images/Sgutterbefore.webp"
+													alt="Lawn Before" 
+													class="swipe-image" 
+												  />
+												</div>
+											  </div>
+										</div>
+									</div>
+
+									
+</code></pre>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					
+
+				
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				document.querySelectorAll('.image-wrapper').forEach(wrapper => {
+				  const img = wrapper.querySelector('img');
+				  let showingBefore = true;
+			  
+				  // Open fullscreen
+				  img.addEventListener('click', (e) => {
+					const isFullscreen = wrapper.classList.contains('fullscreen');
+			  
+					if (!isFullscreen) {
+					  e.stopPropagation();
+					  wrapper.classList.add('fullscreen');
+					  document.body.style.overflow = 'hidden';
+					  img.src = img.dataset.before;
+					  showingBefore = true;
+			  
+					  // Push a fake history state to catch back button
+					  history.pushState({ fullscreen: true }, '', '');
+					} else {
+					  // Toggle swipe effect
+					  showingBefore = !showingBefore;
+					  img.src = showingBefore ? img.dataset.before : img.dataset.after;
+					}
+					
+				  });
+			  
+				  // Exit fullscreen when clicking the background
+				  wrapper.addEventListener('click', (e) => {
+					if (e.target === wrapper) {
+					  exitFullscreen(wrapper);
+					}
+				  });
+			  
+				  // Back button handler
+				  window.addEventListener('popstate', (e) => {
+					// If fullscreen, close it
+					const openWrapper = document.querySelector('.image-wrapper.fullscreen');
+					if (openWrapper) {
+					  exitFullscreen(openWrapper);
+					}
+				  });
+			  
+				  // Exit fullscreen helper
+				  function exitFullscreen(wrapper) {
+					wrapper.classList.remove('fullscreen');
+					document.body.style.overflow = '';
+			  
+					// Remove fake history state so pressing back again goes to previous page
+					if (history.state && history.state.fullscreen) {
+					  history.back();
+					}
+				  }
+				});
+			  </script>
+			  
+			  <script>
+				document.querySelectorAll('.image-wrapper.multi-step').forEach(wrapper => {
+				  const img = wrapper.querySelector('img');
+				  const images = JSON.parse(wrapper.dataset.images);
+				  let index = 0;
+				  let isFullscreen = false;
+				  let justEnteredFullscreen = false;
+			  
+				  const showImage = (i) => {
+					img.classList.add('fade-out');
+					requestAnimationFrame(() => {
+					  img.src = images[i];
+					  img.onload = () => {
+						img.classList.remove('fade-out');
+					  };
+					});
+				  };
+			  
+				  img.addEventListener('click', (e) => {
+					if (!isFullscreen) {
+					  e.stopPropagation();
+					  isFullscreen = true;
+					  justEnteredFullscreen = true;
+			  
+					  wrapper.classList.add('fullscreen');
+					  document.body.style.overflow = 'hidden';
+					  index = 0;
+					  showImage(index);
+			  
+					  history.pushState({ fullscreen: true }, '', '');
+			  
+					  // Wait a short moment so the first click doesn’t trigger image swap
+					  setTimeout(() => justEnteredFullscreen = false, 300);
+					} else if (!justEnteredFullscreen) {
+					  index = (index + 1) % images.length;
+					  showImage(index);
+					}
+				  });
+			  
+				  wrapper.addEventListener('click', (e) => {
+					if (e.target === wrapper) {
+					  exitFullscreen(wrapper);
+					}
+				  });
+			  
+				  window.addEventListener('popstate', () => {
+					const open = document.querySelector('.image-wrapper.fullscreen');
+					if (open) exitFullscreen(open);
+				  });
+			  
+				  const exitFullscreen = (wrapper) => {
+					wrapper.classList.remove('fullscreen');
+					document.body.style.overflow = '';
+					isFullscreen = false;
+					if (history.state?.fullscreen) history.back();
+				  };
+				});
+			  </script>
+			  <!-- Other scripts -->
+<!-- <script>
+	function preloadImages(imageArray) {
+	  imageArray.forEach(src => {
+		const img = new Image();
+		img.src = src;
+	  });
+	}
+  
+
+	document.addEventListener('DOMContentLoaded', function() {
+    const lazyImages = document.querySelectorAll('.lazy-image');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.onload = () => {
+                    img.classList.add('loaded');
+                };
+                observer.unobserve(img); // Stop watching once loaded
+            }
+        });
+    }, {
+        rootMargin: '200px' // Start loading 200px *before* they are on screen
+    });
+
+    lazyImages.forEach(img => {
+        observer.observe(img);
+    });
+});
+	// Call the function with your image paths
+	preloadImages([
+	'images/dale james palm conifer after.webp',
+    'images/dale james palm conifer before.webp',
+    'images/edgeafter.webp',
+    'images/edgebefore.webp',
+    'images/pathafter.webp',
+    'images/pathbefore.webp',
+
+    'images/rsleftafter.webp',
+    'images/rsleftbefore.webp',
+    'images/rsrightafter.webp',
+    'images/rsrightbefore.webp',
+    'images/Sylvias tree after.webp',
+	'images/Sylvias tree before.webp'
+
+	'images/BClawnbefore.webp',
+	'images/BClawnafter.webp',
+	'images/lawn25before.webp',
+	'images/lawn25webp.webp',
+    'images/Sedgeafter.webp',
+    'images/Sedgebefore.webp',
+
+	'images/Sgutterafter.webp',
+	'images/Sgutterbefore.webp',
+    
+	]);
+  </script> -->
+
+ <!-- 
+<img data-src="images/Sylvias tree after.webp" class="lazy-image" alt="Sixth after">
+<img data-src="images/Sylvias tree before.webp" class="lazy-image" alt="Sixth before">
+<img data-src="images/edgeafter.webp" class="lazy-image" alt="Fourth after">
+<img data-src="images/edgebefore.webp" class="lazy-image" alt="Fourth before">
+<img data-src="images/pathafter.webp" class="lazy-image" alt="Fifth after">
+<img data-src="images/pathbefore.webp" class="lazy-image" alt="Fifth before">
+
+<img data-src="images/lawn25before.webp" class="lazy-image" alt="seventh after">
+<img data-src="images/lawn25webp.webp" class="lazy-image" alt="seventh before">
+<img data-src="images/Sedgeafter.webp" class="lazy-image" alt="eighth after">
+<img data-src="images/Sedgebefore.webp" class="lazy-image" alt="eighth before">
+<img data-src="images/Sgutterafter.webp" class="lazy-image" alt="ninth after">
+<img data-src="images/Sgutterbefore.webp" class="lazy-image" alt="ninth before">
+-->
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		// Preload the first 6 important images
+		preloadImportantImages([
+			'images/dale james palm conifer after.webp',
+			'images/dale james palm conifer before.webp',
+			'images/rsleftafter.webp',
+			'images/rsleftbefore.webp',
+			'images/BClawnafter.webp',
+			'images/BClawnbefore.webp'
+		]);
+	
+		function preloadImportantImages(imageList) {
+			imageList.forEach(src => {
+				const img = new Image();
+				img.src = src;
+			});
+		}
+	
+		// Lazy load the rest
+		const lazyImages = document.querySelectorAll('.lazy-image');
+	
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const img = entry.target;
+					img.src = img.dataset.src;
+					img.onload = () => {
+						img.classList.add('loaded');
+					};
+					observer.unobserve(img);
+				}
+			});
+		}, {
+			rootMargin: '200px'
+		});
+	
+		lazyImages.forEach(img => {
+			observer.observe(img);
+		});
+	});
+	</script>
+	
+  
+  
+			  
+			  
+				
+								<!-- fullscreen ben below-->
+								
+								  
+								  
+								  
+								  
+
+								  
+								  
+								  
+
+	</body>
+</html>
