@@ -142,6 +142,12 @@ Whether you're after regular maintenance, a one-off tidy, or just want your spac
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				if (!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+				  document.getElementById("phoneLink").removeAttribute("href");
+				  document.getElementById("phoneLink").style.cursor = "default";
+				}
+			  </script>
 
 	</body>
 </html>
