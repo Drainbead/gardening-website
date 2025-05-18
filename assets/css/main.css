@@ -3815,6 +3815,98 @@ z-index: -1;
 				}
 
 		}
+@media screen and (max-width: 980px) {
+  #nav {
+    display: none;
+  }
+  #subnav {
+    display: flex;  /* keep it visible on mobile */
+    overflow-x: auto; /* allow horizontal scroll if too many tabs */
+  }
+}
+
+		#subnav {
+  color: #ffffff;
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);  /* Slightly darker background so it’s distinct */
+  height: 3rem;
+  line-height: 3rem;
+  margin: 0 auto 1rem auto;
+  padding: 0 2rem;
+  position: relative;
+  width: calc(100% - 4rem);
+  max-width: 72rem;
+  z-index: 1;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#subnav ul.links {
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+#subnav ul.links li {
+  padding-left: 0;
+}
+
+#subnav ul.links li a {
+  display: block;
+  font-size: 0.75rem;
+  padding: 0 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#subnav ul.links li a:hover,
+#subnav ul.links li.active a {
+  color: #18bfef;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hide on desktop */
+#nav ul.links li.sun-plants-link {
+  display: none;
+}
+
+/* Show only on mobile */
+@media screen and (max-width: 980px) {
+  #nav ul.links li.sun-plants-link {
+    display: block;
+  }
+}
+.ph-circle {
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  line-height: 1.6em;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: white;
+  margin-left: 0.4em;
+}
+
+.ph-acidic {
+  background-color: #d9534f; /* red */
+}
+
+.ph-neutral {
+  background-color: #5bc0de; /* blue */
+}
+
+.ph-alkaline {
+  background-color: #5cb85c; /* green */
+}
 
 /* Nav */
 
