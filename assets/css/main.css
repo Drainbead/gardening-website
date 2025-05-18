@@ -3907,7 +3907,71 @@ z-index: -1;
 .ph-alkaline {
   background-color: #5cb85c; /* green */
 }
+.submenu {
+  display: none;
+  padding-left: 1em;
+  list-style-type: none;
+}
 
+.links li:hover > .submenu {
+  display: block;
+}
+.has-submenu .submenu {
+  display: none;
+  flex-direction: column;
+  background: rgba(255,255,255,0.1);
+  padding-left: 1rem;
+  padding-right: 1.5rem; /* Adjust as needed */
+}
+
+.has-submenu.open .submenu {
+  display: flex;
+}
+@media screen and (min-width: 981px) {
+  .submenu-toggle {
+    display: none;
+  }
+}
+.submenu-toggle {
+	position: absolute;
+  cursor: pointer;
+  padding-left: 0.5rem;
+  font-weight: bold;
+  user-select: none;
+}
+.has-submenu {
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.submenu-toggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  user-select: none;
+  pointer-events: none; /* Prevent it from being interacted with if you want hover-only */
+  display: none; /* Hide by default */
+}
+
+@media screen and (max-width: 980px) {
+  .submenu-toggle {
+    display: inline-block; /* Only show on mobile */
+  }
+}
+@media screen and (min-width: 981px) {
+  .has-submenu:hover .submenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+  }
+}
 /* Nav */
 
 	#nav {
