@@ -3972,6 +3972,26 @@ z-index: -1;
     z-index: 1000;
   }
 }
+.image-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  background-color: #18bfef;
+  color: white;
+  font-size: 1.1em;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: auto;
+  transition: background-color 0.3s ease;
+}
+
+.image-circle:hover {
+  background-color: #0f88c9;
+}
 /* Nav */
 
 	#nav {
