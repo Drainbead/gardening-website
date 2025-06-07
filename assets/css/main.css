@@ -5107,7 +5107,10 @@ z-index: -1;
 	transition: opacity 0.4s ease;
 	z-index: 1;
   }
-  
+  a {
+  color: blue;
+  text-decoration: underline;
+}
   .nav-btn {
 	position: absolute;
 	top: 50%;
