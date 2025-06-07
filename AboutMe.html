@@ -65,7 +65,17 @@
 									<h1>My Gardening<br />
 									Experience</h1>
 
-									<p><span class="image left"><img src="images/BCA-gardening-ben-helpston-shrub-removal.jpg" alt="Hedgehog foraging" /></span>
+									<p>
+  <span class="image left">
+    <img 
+      src="images/BCA-gardening-ben-helpston-shrub-removal.jpg" 
+      alt="Ben removing shrubs in Helpston garden" 
+      id="gardenImage"
+      onclick="openLightbox(this.src)"
+      style="cursor: pointer;"
+    />
+  </span>
+</p>
 
 									<p>I'm a passionate gardener based in Peterborough with over six years of hands-on experience. The most valuable part of my journey came from working with a brilliant self-employed gardener named Brian. He taught me how to really understand what a customer wants — not just how to maintain a garden, but how to bring it back to life. He was genuinely proud when I told him I was going solo.</p>
 
@@ -163,6 +173,32 @@
 				  document.getElementById("phoneLink").style.cursor = "default";
 				}
 			  </script>
+			  <div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" />
+</div>
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+    history.pushState({ lightbox: true }, ""); // enable back button close
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    history.back(); // go back one step
+  }
+
+  window.addEventListener('popstate', function(event) {
+    // Close lightbox on browser back
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display === 'flex') {
+      lightbox.style.display = 'none';
+    }
+  });
+</script>
 
 	</body>
 </html>
