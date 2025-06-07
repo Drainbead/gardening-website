@@ -246,34 +246,40 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<section>
-			<form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact" />
-  <p>By submitting this form, you consent to us receiving your name, email address, and message. 
-		This information will only be used to respond to your enquiry and will not be shared with third parties. 
-		If you’d like your details removed at any time, just let us know.</p>
-  <div class="fields">
-    <div class="field">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required />
+<section>
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact" />
+    
+ <p hidden aria-hidden="true">
+  <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+</p>
+
+    <p>By submitting this form, you consent to us receiving your name, email address, and message. 
+      This information will only be used to respond to your enquiry and will not be shared with third parties. 
+      If you’d like your details removed at any time, just let us know.</p>
+
+    <div class="fields">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="3" required></textarea>
+      </div>
     </div>
 
-    <div class="field">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required />
-    </div>
-
-    <div class="field">
-      <label for="message">Message</label>
-      <textarea name="message" id="message" rows="3" required></textarea>
-    </div>
-  </div>
-
-  <ul class="actions">
-    <li><input type="submit" value="Send Message" /></li>
-  </ul>
-</form>
-						</section>
+    <ul class="actions">
+      <li><input type="submit" value="Send Message" /></li>
+    </ul>
+  </form>
+</section>
 						<section class="split contact">
 							<section class="alt">
 								<h3>Locations Served</h3>
